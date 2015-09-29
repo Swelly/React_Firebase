@@ -10,9 +10,9 @@
 //// Base
 */
 @import
-    "base/_colors",
-    "base/_fonts",
-    "base/_typography",
+    "base/_colors.scss",
+    "base/_fonts.scss",
+    "base/_typography.scss",
     "base/_variables.scss";
 
 /*
@@ -46,10 +46,10 @@
 //// Utilities
 */
 @import
-    "utils/_animation",
-    "utils/_functions",
-    "utils/_grid",
-    "utils/_media-queries",
+    "utils/_animation.scss",
+    "utils/_functions.scss",
+    "utils/_grid.scss",
+    "utils/_media-queries.scss",
     "utils/_mixins.scss";
 
 // Shame File
