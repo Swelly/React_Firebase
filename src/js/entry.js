@@ -1,24 +1,20 @@
-// Importing CSS to entry point
 import '../css/master.scss';
-
 import React from 'react';
-import Dropdown from './Dropdown.jsx';
 
-var options = {
-  title: "Choose a Genre",
-  items:
-  [
-    'Adventure',
-    'Action',
-    'MMO',
-    'Strategy'
-  ],
-  className: 'halaa'
-};
+class UserName extends React.Component {
+  render() {
+    return <h2>Name: {this.props.name}</h2>;
+  }
+}
 
-
-var element = React.createElement(Dropdown, options);
-
-React.render(
-  element, document.getElementById('app')
-);
+class User extends React.Component {
+  render() {
+    return <div>
+        <UserName name={this.props.user.name} />
+        <h3>City: {this.props.user.city}</h3>
+      </div>;
+  }
+}
+var mountNode = document.getElementById('app');
+var user = { name: 'John', city: 'San Francisco' };
+React.render(<User user={user} />, mountNode);
