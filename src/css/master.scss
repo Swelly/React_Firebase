@@ -1,0 +1,69 @@
+/* * * * * * * * * * * * * * * * * */
+@charset "utf-8.scss";
+/* * * * * * * * * * * * * * * * * */
+
+// Start Sass imports //
+/* Reset */
+@import "vendors/_normalize.scss";
+
+/*
+//// Base
+*/
+@import
+    "base/_colors",
+    "base/_fonts",
+    "base/_typography",
+    "base/_variables.scss";
+
+/*
+//// Components
+*/
+@import
+    "components/_buttons.scss",
+    "components/_dropdown.scss",
+    "components/_thumbnails.scss";
+
+// Forms
+@import
+    "components/forms/_form.scss",
+    "components/forms/_input.scss";
+
+/*
+//// Layouts
+*/
+@import
+    "layout/_navbar.scss",
+    "layout/_header.scss",
+    "layout/_footer.scss";
+
+/*
+//// Pages
+*/
+@import
+    "pages/_index.scss";
+
+/*
+//// Utilities
+*/
+@import
+    "utils/_animation",
+    "utils/_functions",
+    "utils/_grid",
+    "utils/_media-queries",
+    "utils/_mixins.scss";
+
+// Shame File
+@import "utils/_shame.scss";
+
+
+body {
+    background: $bg-color;
+    height: 100%;
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+    color: $base-color;
+    line-height: $base-line-height;
+}
+
+.show {display: block !important;}

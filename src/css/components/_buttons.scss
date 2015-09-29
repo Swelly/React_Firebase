@@ -1,0 +1,36 @@
+@import "../utils/_mixins.scss";
+@import "../base/_colors.scss";
+
+.btn {
+    @include transition(all, 0.1s, ease-in-out);
+    @include borderRadius(4px);
+    position: relative;
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1.4;
+    color: $base-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border: 1px solid $base-color;
+    background-color: #FFF;
+    outline: none;
+}
+
+.btn-dropdown {
+    min-width: 210px;
+    padding: 12px 40px;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #294149;
+    &:hover {
+        border: 1px solid $secondary-color;
+        color: $secondary-color;
+    }
+}

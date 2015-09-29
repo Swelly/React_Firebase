@@ -1,0 +1,74 @@
+//////
+// Base typography classes to modify headings + text + code w/ classes
+//////
+
+p, .p {
+  font-family: $base-font-family;
+  color: $base-color;
+}
+
+// Headings sizes, line height, letter-spacing
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+}
+
+h1, h2, .h1, .h2 { line-height: 1.1; }
+h3, h4, .h3, .h4 { line-height: 1.3; }
+
+h1, .h1 { font-size: 400%; letter-spacing: -2px; }
+h2, .h2 { font-size: 250%; letter-spacing: -1px; }
+h3, .h3 { font-size: 200%; }
+h4, .h4 { font-size: 180%; }
+h5, .h5 { font-size: 130%; }
+
+// Code Styles
+code, .code {
+  font-family: $code-font-family;
+  font-size: $code-font-size;
+  line-height: $base-line-height;
+}
+
+// Decorative
+.quiet { font-color: $quiet-color; }
+.loud  { font-color: $loud-color; }
+
+.italic { font-style: italic; }
+.bold   { font-weight: 700; @extend .loud; }
+
+// Lists & Blocks
+.block-margins { margin: 1em 0; }
+
+.unordered-list { list-style-type: disc; }
+.ordered-list { list-style: decimal; }
+
+a, .link {
+  color: $link-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:visited {color: $link-color-light; }
+
+  &:hover, &:visited:hover {color: $link-color-dark; }
+}
+
+// Typography Class for A++ Blog posts
+.typography {
+  i, em { @extend .italic; }
+  b, strong { @extend .bold; }
+
+  h1, .h1 { @extend .h1; margin: 1em 0 0.5em; }
+  h2, .h2 { @extend .h2; margin: 1em 0 0.5em; }
+  h3, .h3 { @extend .h3; margin: 1em 0 0.5em; }
+  h4, .h4 { @extend .h4; margin: 1em 0 0.5em; }
+  h5, .h5 { @extend .h5; margin: 1em 0 0.5em; }
+  h6, .h6 { @extend .h6; margin: 1em 0 0.5em; }
+
+  p, ul, ol, pre { @extend .block-margins; }
+
+  ul { @extend .unordered-list; }
+  ol { @extend .ordered-list; }
+
+  pre, code { @extend .code; }
+}

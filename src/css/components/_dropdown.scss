@@ -1,0 +1,41 @@
+.dropdown {
+  padding: 10px;
+  position: relative;
+
+  .caret {
+    position: absolute;
+    display: inline-block;
+    right: 10%;
+    width: 12px;
+    height: 20px;
+    background: url("../img/caret.png");
+    background-size: 100%;
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 10px;
+    min-width: 160px;
+    float: left;
+    margin: 10px 0 0;
+    padding: 15px 25px;
+    list-style: none;
+    font-size: 16px;
+    text-align: left;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgb(239, 239, 239);
+    @include borderRadius(4px);
+    box-shadow: 0 6px 12px rgba(198, 216, 217, 0.175);
+    li {
+        padding: 5px 0;
+    }
+    li.active > a {
+        color: $secondary-color;
+        cursor: default;
+    }
+  }
+}

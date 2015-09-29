@@ -1,0 +1,31 @@
+////   BASE FONTS   ////
+
+/* Weights */
+$font-weight-light:     100;
+$font-weight-regular:   400;
+$font-weight-bold:      600;
+
+/* Line Heights */
+$base-line-height:      1.4;
+$double-line-height:    ($base-line-height * 1.5);
+
+// Base Font
+$base-font-family:  "San Francisco Text", SanFranciscoText, Arial, sans-serif;
+$secondary-font-family: 'Varela Round', VarelaRound, Arial, sans-serif;
+$base-font-size:    18px;
+$base-font-weight:  $font-weight-regular;
+
+
+// Link Styles
+$link-font-family:  $base-font-family;
+$link-font-size:    $base-font-size;
+
+// Fixed Font
+$code-font-family:  'Fira Code', FiraCode, monospace;
+$code-font-size:    85%;
+
+// Headings
+$heading-font-family:   'Moon', Moon, sans-serif;
+$heading-font-size:     20px;
+$heading-font-weight:   $font-weight-bold;
+$heading-font-lh:       $double-line-height;

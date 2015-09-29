@@ -1,0 +1,49 @@
+/// Importing the functions dir
+/// for color range modification
+/// ex: tint, shade, mix, etc.
+
+// Important Colors
+$base-color:        #515B5E;
+$secondary-color:   #2E3233;
+$accent-color:      #13CDD7;
+
+$bg-color:          #FFFEFC;
+
+$border-color:      #E2E3DF;
+
+// $secondary-color:
+
+/* * * * * * * * * * * * * * * * * * * * */
+
+// Base text colors
+$text-color: $base-color;
+$color-text-light: lighten($base-color, 40%);
+$color-text-lightest: lighten($base-color, 60%);
+
+// Base link text colors
+$link-color: $accent-color;
+$link-color-dark: darken($link-color, 30%);
+$link-color-light: lighten($link-color, 60%);
+
+//// Code text colors
+// Want to have this preformatted depending on language
+
+// Base Heading colors
+$color-heading: $secondary-color;
+
+/* * * * * * * * * * * * * * * * * * * * */
+
+/* Borders */
+$border-color: #D2DCE1;
+$border-color-dark: darken($border-color, 40%);
+$border-color-light: lighten($border-color, 10%);
+
+/* Highlights */
+$text-color-highlighted: rgba(255,255,255,0.85);
+$background-color-highlighted: rgb(76, 234, 219);
+
+
+/* Color Variations */
+$quiet-color: #11AEB7;
+$loud-color: #00FFFB;
+
