@@ -10,16 +10,18 @@ class Header extends React.Component {
   render () {
     return (
       <div className="input-group">
-        <input type="text" className="form-control">
-          <span className="input-group-btn">
-            <button
-              onClick={this.handleClick}
-              className="btn-default">
-              Add
-            </button>
-          </span>
-        </input>
+        <input type="text" ref="newItem" placeholder="New Item" className="form-control"/>
+        <span className="input-group-btn">
+          <button
+          onClick={this.handleClick}
+          className="btn btn-default"
+          type="button">
+            Add
+          </button>
+        </span>
       </div>
     )
   }
 }
+
+module.exports = Header;

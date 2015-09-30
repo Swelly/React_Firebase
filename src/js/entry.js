@@ -1,4 +1,4 @@
-import '../css/master.scss';
+// import '../css/master.scss';
 import React from 'react';
 import Rebase from 're-base';
 import Header from './Header.jsx';
@@ -30,6 +30,7 @@ class App extends React.Component {
           <div className="col-sm-6 col-md-offset-3">
             <div className="col-sm-12">
               <h3 className="text-center">ReBase ToDo</h3>
+              <Header />
             </div>
           </div>
         </div>
