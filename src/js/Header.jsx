@@ -5,13 +5,13 @@ class Header extends React.Component {
     text: ''
   }
 
-  handleClick () {
+  handleClick ()  {
     // Send value of text input to firebase
-    console.log("I was clicked!");
+    console.log(this.state.text);
   }
 
-  handleInputChange (event) {
-    this.setState({text: event.target.value});
+  handleInputChange = (e) => {
+    this.setState({text: e.target.value});
   }
 
   render () {
@@ -19,14 +19,14 @@ class Header extends React.Component {
       <div className="input-group">
         <input
           value={this.state.text}
-          onChange={this.handleInputChange.bind(this)}
+          onChange={this.handleInputChange}
           type="text"
           ref="newItem"
           placeholder="New Item"
           className="form-control"/>
         <span className="input-group-btn">
           <button
-            onClick={this.handleClick}
+            onClick={this.handleClick.bind(this)}
             className="btn btn-default"
             type="button">
             Add
