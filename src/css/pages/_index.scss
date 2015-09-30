@@ -1,0 +1,6 @@
+.row {
+    @mixin width ($cols:1) {
+        width: ($cols * ($column + $gutter) - $gutter);
+        width: ($cols * ($column + $gutter) - $gutter) / $rem;
+    }
+}

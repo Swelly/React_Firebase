@@ -12,7 +12,11 @@ var App = React.createClass({
   },
   render: function() {
     console.log(this.state);
-    return <h2>Hi dude</h2>;
+    return <div className="row panel">
+      <div className="eighth">
+        <h2 className="title center">To-Do List</h2>
+      </div>
+    </div>
   }
 });
 
