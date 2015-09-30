@@ -1,7 +1,8 @@
 // import '../css/master.scss';
-import React from 'react';
+import React  from 'react';
 import Rebase from 're-base';
 import Header from './Header.jsx';
+import List   from './List.jsx'
 
 // Firebase URL for ReBase
 var base = Rebase.createClass('https://shining-inferno-2199.firebaseio.com/');
@@ -9,6 +10,10 @@ var base = Rebase.createClass('https://shining-inferno-2199.firebaseio.com/');
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      list: []
+    }
   }
 
   componentDidMount(){
@@ -37,6 +42,7 @@ class App extends React.Component {
             <div className="col-sm-12">
               <h3 className="text-center">ReBase ToDo</h3>
               <Header add={this.handleAddItem.bind(this)} />
+              <List items={this.state.list} />
             </div>
           </div>
         </div>

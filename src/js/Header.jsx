@@ -6,11 +6,12 @@ class Header extends React.Component {
   }
 
   handleClick ()  {
-    // Send value of text input to firebase
+    // Send value of text input to Firebase
     this.props.add({
       text: this.state.text,
       done: false
     });
+    this.setState({text: ''});
   }
 
   handleInputChange = (e) => {
