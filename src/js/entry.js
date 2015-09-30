@@ -1,21 +1,25 @@
 import '../css/master.scss';
 import React from 'react';
+
 import ReactFire from 'reactfire';
 import Firebase from 'firebase';
 
+import Header from './Header.jsx';
+
+// Firebase URL
 var rootUrl = 'https://shining-inferno-2199.firebaseio.com/';
 
 var App = React.createClass({
-  mixins: [ ReactFire ],
-  componentWillMount: function () {
-    this.bindAsObject(new Firebase(rootUrl + 'items/'), 'items');
-  },
+  // mixins: [ ReactFire ],
+  // componentWillMount: function () {
+  //   this.bindAsObject(new Firebase(rootUrl + 'items/'), 'items');
+  // },
   render: function() {
-    console.log(this.state);
     return <div className="row panel">
       <div className="eighth">
         <h2 className="title center">To-Do List</h2>
       </div>
+      <Header />
     </div>
   }
 });
