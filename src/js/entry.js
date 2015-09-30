@@ -1,29 +1,42 @@
 import '../css/master.scss';
 import React from 'react';
-
-import ReactFire from 'reactfire';
-import Firebase from 'firebase';
-
+import Rebase from 're-base';
 import Header from './Header.jsx';
 
 // Firebase URL
-var rootUrl = 'https://shining-inferno-2199.firebaseio.com/';
+var base = Rebase.createClass('https://shining-inferno-2199.firebaseio.com/');
 
-var App = React.createClass({
-  mixins: [ ReactFire ],
-  componentWillMount: function () {
-    this.bindAsObject(new Firebase(rootUrl + 'items/'), 'items');
-  },
-  render: function() {
-    return <div className="row panel">
-      <div className="eighth">
-        <h2 className="title center">To-Do List</h2>
-      </div>
-      <Header />
-    </div>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
   }
-});
 
-var element = React.createElement(App, {});
-var mountNode = document.getElementById('app');
-React.render(<App />, mountNode);
+  componentDidMount(){
+    this.ref = base.syncState('todoList', {
+      context: this,
+      state: 'list',
+      asArray: true
+    });
+  }
+
+  componentWillUnmount(){
+    base.removeBinding(this.ref);
+  }
+
+  render () {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-6 col-md-offset-3">
+            <div className="col-sm-12">
+              <h3 className="text-center">ReBase ToDo</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+};
+
+
+React.render(<App />, document.getElementById('app'));

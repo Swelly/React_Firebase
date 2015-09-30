@@ -1,9 +1,13 @@
 import React from 'react';
 
-module.exports = React.createClass ({
+class Header extends React.Component {
 
-  render: function () {
+  handleClick() {
+    // Send value of text input to firebase
+    console.log("I was clicked");
+  }
 
+  render () {
     return (
       <div className="input-group">
         <input type="text" className="form-control">
@@ -17,10 +21,5 @@ module.exports = React.createClass ({
         </input>
       </div>
     )
-  },
-  // End Return
-  handleClick: function() {
-    // Send value of text input to Firebase
-    console.log("I was clicked");
   }
-});
+}
