@@ -3,7 +3,7 @@ import React from 'react';
 import Rebase from 're-base';
 import Header from './Header.jsx';
 
-// Firebase URL
+// Firebase URL for ReBase
 var base = Rebase.createClass('https://shining-inferno-2199.firebaseio.com/');
 
 class App extends React.Component {
