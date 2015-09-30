@@ -1,20 +1,21 @@
 import '../css/master.scss';
 import React from 'react';
+import ReactFire from 'reactfire';
+import Firebase from 'firebase';
 
-class UserName extends React.Component {
-  render() {
-    return <h2>Name: {this.props.name}</h2>;
-  }
-}
+var rootUrl = 'https://shining-inferno-2199.firebaseio.com/';
 
-class User extends React.Component {
-  render() {
-    return <div>
-        <UserName name={this.props.user.name} />
-        <h3>City: {this.props.user.city}</h3>
-      </div>;
+var App = React.createClass({
+  mixins: [ ReactFire ],
+  componentWillMount: function () {
+    this.bindAsObject(new Firebase(rootUrl + 'items/'), 'items');
+  },
+  render: function() {
+    console.log(this.state);
+    return <h2>Hi dude</h2>;
   }
-}
+});
+
+var element = React.createElement(App, {});
 var mountNode = document.getElementById('app');
-var user = { name: 'John', city: 'San Francisco' };
-React.render(<User user={user} />, mountNode);
+React.render(<App />, mountNode);
