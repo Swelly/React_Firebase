@@ -10,10 +10,10 @@ import Header from './Header.jsx';
 var rootUrl = 'https://shining-inferno-2199.firebaseio.com/';
 
 var App = React.createClass({
-  // mixins: [ ReactFire ],
-  // componentWillMount: function () {
-  //   this.bindAsObject(new Firebase(rootUrl + 'items/'), 'items');
-  // },
+  mixins: [ ReactFire ],
+  componentWillMount: function () {
+    this.bindAsObject(new Firebase(rootUrl + 'items/'), 'items');
+  },
   render: function() {
     return <div className="row panel">
       <div className="eighth">

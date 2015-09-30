@@ -1,19 +1,19 @@
 .clearfix {@include clearfix();}
 .centerer {@include centerer;}
 .center {
-    margin: 0 auto;
-    text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .row {
-    width: 80%;
-    height: auto;
-    display: block;
-    padding: 0 10%;
+  width: 80%;
+  height: auto;
+  display: block;
+  padding: 0 10%;
 }
 
 .panel {
-    width: 50%;
-    margin: 0 auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
