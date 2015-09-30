@@ -23,6 +23,12 @@ class App extends React.Component {
     base.removeBinding(this.ref);
   }
 
+  handleAddItem(newItem) {
+    this.setState({
+      list: this.state.list.concat([newItem])
+    });
+  }
+
   render () {
     return (
       <div className="container">
@@ -30,7 +36,7 @@ class App extends React.Component {
           <div className="col-sm-6 col-md-offset-3">
             <div className="col-sm-12">
               <h3 className="text-center">ReBase ToDo</h3>
-              <Header />
+              <Header add={this.handleAddItem.bind(this)} />
             </div>
           </div>
         </div>

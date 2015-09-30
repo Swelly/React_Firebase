@@ -7,7 +7,10 @@ class Header extends React.Component {
 
   handleClick ()  {
     // Send value of text input to firebase
-    console.log(this.state.text);
+    this.props.add({
+      text: this.state.text,
+      done: false
+    });
   }
 
   handleInputChange = (e) => {
