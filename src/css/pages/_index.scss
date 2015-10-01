@@ -1,6 +1,1 @@
-.row {
-    @mixin width ($cols:1) {
-        width: ($cols * ($column + $gutter) - $gutter);
-        width: ($cols * ($column + $gutter) - $gutter) / $rem;
-    }
-}
+.loaded {opacity: 0.8}

@@ -1,4 +1,4 @@
-// import '../css/master.scss';
+import '../css/pages/_index.scss';
 import React  from 'react';
 import Rebase from 're-base';
 import Header from './Header.jsx';
@@ -12,8 +12,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: []
+      list: [],
+      loaded: false
     };
+  }
+
+  componentWillMount () {
+    this.state.loaded = true;
   }
 
   componentDidMount() {
@@ -42,7 +47,9 @@ class App extends React.Component {
             <div className="col-sm-12">
               <h3 className="text-center">ReBase ToDo</h3>
               <Header add={this.handleAddItem.bind(this)} />
-              <List items={this.state.list} />
+              <div className={(this.state.loaded ? 'loaded' : '')}>
+                <List items={this.state.list} />
+              </div>
             </div>
           </div>
         </div>
