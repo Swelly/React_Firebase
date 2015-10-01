@@ -5,8 +5,8 @@ import Header from './Header.jsx';
 import List   from './List.jsx'
 
 // Firebase Config with Rebase
-let rootURL  = 'https://shining-inferno-2199.firebaseio.com/';
-const base = Rebase.createClass(rootURL);
+
+const base = Rebase.createClass('https://shining-inferno-2199.firebaseio.com/');
 
 class App extends React.Component {
   constructor(props) {
@@ -14,10 +14,6 @@ class App extends React.Component {
     this.state = {
       list: []
     };
-  }
-
-  componentWillMount() {
-    // Crap, not sure how to do this one.
   }
 
   componentDidMount() {
@@ -37,12 +33,6 @@ class App extends React.Component {
       list: this.state.list.concat([newItem])
     });
   }
-
-  // handleDataLoaded () {
-  //   this.setState({
-  //     loaded: true
-  //   })
-  // }
 
   render () {
     return (

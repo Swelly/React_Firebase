@@ -8,9 +8,9 @@ class List extends React.Component {
     } else {
       var listChildren = this.props.items.map((item, index) => {
         return (
-          <li key={index} className="list-group-item">
+          <li key={index} className="list-group-item ">
             <span>
-              {item}
+              {item.text}
             </span>
           </li>
         )
