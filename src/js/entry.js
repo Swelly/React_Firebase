@@ -4,19 +4,23 @@ import Rebase from 're-base';
 import Header from './Header.jsx';
 import List   from './List.jsx'
 
-// Firebase URL for ReBase
-var base = Rebase.createClass('https://shining-inferno-2199.firebaseio.com/');
+// Firebase Config with Rebase
+let rootURL  = 'https://shining-inferno-2199.firebaseio.com/';
+const base = Rebase.createClass(rootURL);
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       list: []
-    }
+    };
   }
 
-  componentDidMount(){
+  componentWillMount() {
+    // Crap, not sure how to do this one.
+  }
+
+  componentDidMount() {
     this.ref = base.syncState('todoList', {
       context: this,
       state: 'list',
@@ -24,7 +28,7 @@ class App extends React.Component {
     });
   }
 
-  componentWillUnmount(){
+  componentWillUnmount() {
     base.removeBinding(this.ref);
   }
 
@@ -33,6 +37,12 @@ class App extends React.Component {
       list: this.state.list.concat([newItem])
     });
   }
+
+  // handleDataLoaded () {
+  //   this.setState({
+  //     loaded: true
+  //   })
+  // }
 
   render () {
     return (
