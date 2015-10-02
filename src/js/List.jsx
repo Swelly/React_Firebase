@@ -9,43 +9,41 @@ class List extends React.Component {
     } else {
       var listChildren = this.props.items.map((item, index) => {
         return (
-          <div className="input-group">
-              <span className="input-group-addon">
-                  <input
-                      type="checkbox"
-                      onChange={this.handleDoneChange}
-                  />
-              </span>
-              <input
-                  type="text"
-                  className="form-control"
-                  key={item.key}
-                  value={item.text}
-              />
-              <span className="input-group-btn">
-                  <button className="btn btn-default">
-                      Delete
-                  </button>
-              </span>
-          </div>
+          <li key={index} className="list-group-item">
+            <div className="input-group">
+                <span className="input-group-addon">
+                    <input
+                        type="checkbox"
+                        // checked={item.done}
+                    />
+                </span>
+                <input
+                    type="text"
+                    className="form-control"
+                    defaultValue={item.text}
+                />
+                <span className="input-group-btn">
+                    <button
+                    className="btn btn-default"
+                    // onClick={this.props.remove.bind(null, index)}
+                    >
+                        Delete
+                    </button>
+                </span>
+            </div>
+          </li>
         )
-
       });
       return (
-        <div className="col-sm-12">
+        <ul className="list-group">
           {listChildren}
-        </div>
+        </ul>
       )
     }
   }
 
   render () {
-    return (
-      <ul>
-        {this.renderList()}
-      </ul>
-    )
-
+    return this.renderList();
   }
 }
 
