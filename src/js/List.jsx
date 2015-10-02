@@ -1,4 +1,5 @@
 import React from 'react';
+import ListItem from './ListItem.jsx';
 
 class List extends React.Component {
 
@@ -6,22 +7,17 @@ class List extends React.Component {
     if (this.props.items && Object.keys(this.props.items).length === 0) {
       return <h4>There are no ToDos</h4>
     } else {
-      var listChildren = this.props.items.map((item, index) => {
+      var listChildren = this.props.items.map(item => {
         return (
-          <li key={index} className="list-group-item ">
-            <span>
-              {item.text}
-            </span>
-          </li>
+          <ListItem
+            key={item.key}
+            item={item.text}
+            className="list-group-item"
+          >
+          </ListItem>
         )
       });
-      return (
-        <div className="col-sm-12">
-          <ul className="list-group">
-            {listChildren}
-          </ul>
-        </div>
-      )
+      return listChildren
     }
   }
 
