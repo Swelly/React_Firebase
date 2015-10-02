@@ -15,6 +15,7 @@ class List extends React.Component {
                     <input
                         type="checkbox"
                         checked={item.done}
+                        onChange={this.props.itemStatus.bind(null, index)}
                     />
                 </span>
                 <input
@@ -24,7 +25,7 @@ class List extends React.Component {
                 />
                 <span className="input-group-btn">
                     <button
-                      className="btn btn-default"
+                      className="btn btn-delete"
                       onClick={this.props.delete.bind(null, index)}
                     >
                     Delete

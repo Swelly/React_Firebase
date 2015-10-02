@@ -31,7 +31,7 @@ class Header extends React.Component {
         <span className="input-group-btn">
           <button
             onClick={this.handleClick.bind(this)}
-            className="btn btn-default"
+            className="btn btn-add"
             type="button">
             Add
           </button>

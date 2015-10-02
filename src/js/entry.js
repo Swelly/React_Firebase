@@ -39,6 +39,12 @@ class App extends React.Component {
     });
   }
 
+  handleItemStatus(index) {
+    this.setState({
+
+    })
+  }
+
   handleDeleteItem(index) {
     var newList = this.state.list;
     newList.splice(index, 1);
@@ -56,7 +62,11 @@ class App extends React.Component {
               <h3 className="text-center">ReBase ToDo</h3>
               <Header add={this.handleAddItem.bind(this)} />
               <div className={(this.state.loaded ? 'loaded' : '')}>
-                <List items={this.state.list} delete={this.handleDeleteItem.bind(this)} />
+                <List
+                  items={this.state.list}
+                  itemStatus={this.handleItemStatus.bind(this)}
+                  delete={this.handleDeleteItem.bind(this)}
+                  />
               </div>
             </div>
           </div>

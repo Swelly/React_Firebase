@@ -3,3 +3,26 @@
 .input-group {
     margin-bottom: 15px;
 }
+
+.btn-add {
+  color: #FFF;
+  border-color: #74B4FF;
+  background: linear-gradient(0deg, #74B4FF, #74B4FF);
+  transition: background 1.0s ease-in;
+  &:hover {
+    color: #FFF;
+    background: linear-gradient(90deg, #74B4FF, #51A0FD);
+  }
+}
+
+.btn-delete {
+  color: #FFF;
+  border-color: #FF6B6B;
+  background: linear-gradient(0deg, #FF6B6B, #FF6B6B);
+  transition: background 1.0s ease-in;
+  &:hover {
+    color: #FFF;
+    background: linear-gradient(90deg, #FF6B6B, #F95353);
+
+  }
+}
