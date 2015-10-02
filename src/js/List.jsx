@@ -15,7 +15,7 @@ class List extends React.Component {
                     <input
                         type="checkbox"
                         checked={item.done}
-                        onChange={this.props.itemStatus.bind(null, index)}
+                        onChange={this.props.done.bind(null, item.done)}
                     />
                 </span>
                 <input
