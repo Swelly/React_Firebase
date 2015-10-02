@@ -3,7 +3,7 @@ import React from 'react';
 
 class List extends React.Component {
 
-  renderList() {
+  checkRenderList() {
     if (this.props.items && Object.keys(this.props.items).length === 0) {
       return <h4>There are no ToDos</h4>
     } else {
@@ -14,7 +14,7 @@ class List extends React.Component {
                 <span className="input-group-addon">
                     <input
                         type="checkbox"
-                        // checked={item.done}
+                        checked={item.done}
                     />
                 </span>
                 <input
@@ -24,10 +24,10 @@ class List extends React.Component {
                 />
                 <span className="input-group-btn">
                     <button
-                    className="btn btn-default"
-                    // onClick={this.props.remove.bind(null, index)}
+                      className="btn btn-default"
+                      onClick={this.props.delete.bind(null, index)}
                     >
-                        Delete
+                    Delete
                     </button>
                 </span>
             </div>
@@ -43,7 +43,7 @@ class List extends React.Component {
   }
 
   render () {
-    return this.renderList();
+    return this.checkRenderList();
   }
 }
 
