@@ -39,8 +39,8 @@ class App extends React.Component {
     });
   }
 
-  handleItemStatus(index) {
-    // this.setState({})
+  handleDoneChange(checked) {
+    console.log(checked)
   }
 
   handleDeleteItem(index) {
@@ -62,7 +62,7 @@ class App extends React.Component {
               <div className={(this.state.loaded ? 'loaded' : '')}>
                 <List
                   items={this.state.list}
-                  itemStatus={this.handleItemStatus.bind(this)}
+                  done={this.handleDoneChange.bind(this)}
                   delete={this.handleDeleteItem.bind(this)}
                 />
               </div>
