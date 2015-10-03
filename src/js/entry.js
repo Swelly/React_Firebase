@@ -40,9 +40,7 @@ class App extends React.Component {
   }
 
   handleItemStatus(index) {
-    this.setState({
-
-    })
+    // this.setState({})
   }
 
   handleDeleteItem(index) {
@@ -66,7 +64,7 @@ class App extends React.Component {
                   items={this.state.list}
                   itemStatus={this.handleItemStatus.bind(this)}
                   delete={this.handleDeleteItem.bind(this)}
-                  />
+                />
               </div>
             </div>
           </div>
